@@ -36,7 +36,7 @@ public class PostServiceImpl implements PostService {
     @Override
     public PostDto getPostWithComments(String postId) {
         Post post = postRepository.findById(postId).get();
-        ArrayList comments = restTemplate.getRestTemplate().getForObject("http://localhost:8082/api/comments/" + postId, ArrayList.class);
+        ArrayList comments = restTemplate.getRestTemplate().getForObject("http://COMMENT-SERVICE/api/comments/" + postId, ArrayList.class);
         PostDto postDto = new PostDto();
         postDto.setPostId(post.getId());
         postDto.setTitle(post.getTitle());

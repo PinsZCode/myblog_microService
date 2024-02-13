@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: COMMENT-SERVICE
   datasource:
     url: jdbc:mysql://localhost:3306/commentdb
     username: root
@@ -12,3 +14,12 @@ spring:
       dialect: org.hibernate.dialect.MySQL8Dialect
 server:
   port: 8082
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+  server-url:
+    defaultZone: http://localhost:8761/eureka
